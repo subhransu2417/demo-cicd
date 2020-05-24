@@ -3,9 +3,10 @@ env:
   - DOCKER_PASSWORD=Puja8892
   - DOCKER_USERNAME=subhransu2417@gmail.com
 before_install:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker login -u "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD"
   - docker pull openjdk:11-jre-slim-sid
 
 script:
   - ./mvnw clean install
+  - ./mvnw clean org.jacoco:jacoco-maven-plugin:prepare-agent install
   - ./mvnw deploy jib:build -P deploy-docker
