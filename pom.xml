@@ -84,7 +84,7 @@
 						<version>2.2.0</version>
 						<configuration>
 							<to>
-								<image>subhransu2417/demo-ci-cd</image>
+								<image>subhransu2417/demo-cicd</image>
 								<tags>
 									<tag>${project.version}</tag>
 									<tag>latest</tag>
